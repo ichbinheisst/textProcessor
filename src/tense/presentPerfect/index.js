@@ -1,3 +1,5 @@
+
+
 const prepare = require("../../prepareData");
 const irregularVebs = require("./irregularVerbs");
 function findAux(data) {
@@ -33,12 +35,6 @@ function findAux(data) {
   return sentencesWithHave;
 }
 
-
-
-
-
-
-
 function findRegular(sentences) {
   const res = [];
   sentences.forEach((stc) => {
@@ -68,7 +64,7 @@ function findIrregularverbs(sentences) {
     const text = sentence?.text;
     text?.forEach((word) => {
       const check = irregularVebs.some((verb) => {
-        return verb["Past-Participle"] == word;
+        return verb["Past-simple"] == word;
       });
       if (check) {
         res.push({
